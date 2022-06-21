@@ -90,7 +90,7 @@ void DrawPopup(void){
 		DrawRectangleRec(no, RED);
 	}else{
 		DrawRectangleRec(ok, GREEN);
-		DrawText("TAMAM", ok.x, ok.y+15, 14, DARKBLUE);
+		DrawText("ok", ok.x, ok.y+15, 14, DARKBLUE);
 		bool act = false;
 		if (CheckCollisionPointRec(mousePoint, ok)){
 			if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT)) act = true;
