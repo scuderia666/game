@@ -30,14 +30,10 @@ int main()
 	switch(currentScreen)
         {
             case LOGO:
-		if (IsKeyPressed(KEY_ENTER))
-			currentScreen = GAMEPLAY;
 		Menu();
 		break;
             case GAMEPLAY:
-		if (IsKeyPressed(KEY_ENTER))
-			currentScreen = LOGO;
-		UpdateDrawFrame();
+		Game();
 	    default:
 		break;
 	}
@@ -166,7 +162,7 @@ void Menu(void)
 	DrawText(name, (int)textBox.x + 5, (int)textBox.y + 8, 20, MAROON);
 }
 
-void UpdateDrawFrame(void)
+void Game(void)
 {
         ClearBackground(RED);
 
@@ -183,5 +179,6 @@ void UpdateDrawFrame(void)
 	pos.y = Lerp(pos.y, vel.y, 0.1);
 
 	// x, y, w, h
+	DrawText(name, pos.x-(2*letterCount), pos.y-20, 20, GREEN);
 	DrawRectangle(pos.x, pos.y, 50, 50, RAYWHITE);
 }
